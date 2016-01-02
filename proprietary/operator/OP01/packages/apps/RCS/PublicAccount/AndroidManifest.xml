@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.mediatek.rcs.pam"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="21"
+        android:targetSdkVersion="21" />
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="org.gsma.joyn.RCS_USE_CHAT" />
+    <uses-permission android:name="org.gsma.joyn.RCS_READ_CHAT" />
+    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+
+        <!--
+        <activity
+            android:name="com.mediatek.rcs.pam.MainActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+         -->
+
+        <provider
+            android:name=".provider.PAProvider"
+            android:authorities="com.mediatek.publicaccounts;com.cmcc.ccs.public_account;com.cmcc.ccs.public_account_info;com.cmcc.ccs.public_account_search"
+            android:enabled="true"
+            android:exported="true" >
+        </provider>
+
+        <service
+            android:name="com.mediatek.rcs.pam.PAServiceImpl"
+            android:enabled="true"
+            android:exported="true" >
+        </service>
+
+        <activity
+            android:name="com.mediatek.rcs.pam.activities.AccountListActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden|keyboard"
+            android:label="@string/title_activity_account_list" >
+            <intent-filter>
+                <action android:name="com.mediatek.rcs.pam.activities.AccountListActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.mediatek.rcs.pam.activities.AccountSearchActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden|keyboard"
+            android:label="@string/title_activity_account_search"
+            android:launchMode="singleTop"
+            android:parentActivityName="com.mediatek.rcs.pam.activities.AccountListActivity" >
+        </activity>
+        <activity
+            android:name="com.mediatek.rcs.pam.activities.AccountHistoryActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden|keyboard"
+            android:label="@string/title_activity_account_history" >
+        </activity>
+        <activity
+            android:name=".activities.AccountDetailsActivity"
+            android:label="@string/title_activity_account_details"
+            android:configChanges="orientation|screenSize|keyboardHidden|keyboard"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.mediatek.rcs.pam.activities.PaWebViewActivity"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/title_activity_pa_web_view" >
+        </activity>
+        <activity
+            android:name=".activities.MessageHistoryActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden|keyboard"
+            android:label="@string/title_activity_message_history" >
+            <intent-filter>
+                <action android:name="com.mediatek.rcs.pam.activities.MessageHistoryActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.MessageHistoryResultActivity"
+            android:label="@string/title_activity_message_history_result" >
+        </activity>
+
+        <provider
+            android:name=".PublicAccountProvider"
+            android:authorities="com.cmcc.ccs.public_account"
+            android:enabled="true"
+            android:exported="true" >
+        </provider>
+
+        <receiver
+            android:name="com.mediatek.rcs.pam.PAMReceiver"
+            android:enabled="true"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="org.gsma.joyn.action.RCS_SERVICE_UP" />
+                <action android:name="org.gsma.joyn.chat.action.NEW_CHAT" />
+                <action android:name="com.mediatek.rcs.contacts.INTENT_RCS_LOGIN" />
+                <action android:name="com.mediatek.intent.rcs.stack.LaunchService" />
+                <action android:name="com.mediatek.intent.rcs.stack.StopService" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name="com.mediatek.rcs.pam.activities.PaComposeActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:hardwareAccelerated="true"
+            android:theme="@style/PamTheme"
+            android:windowSoftInputMode="stateHidden"
+            android:launchMode="singleTask">
+            <!-- android:label="@string/title_activity_pa_compose" > -->
+        </activity>
+        <activity android:name="com.mediatek.rcs.pam.activities.PAIpMsgContentShowActivity" >
+            <intent-filter>
+                <action android:name="com.mediatek.rcs.pam.activities.PAIpMsgContentShowActivity" />
+            </intent-filter>
+            <!-- android:label="@string/title_activity_pa_compose" > -->
+        </activity>
+    </application>
+
+</manifest>

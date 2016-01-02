@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.mediatek.rcs.genericui"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="21" />
+    
+    <application
+        android:allowBackup="true"
+        android:label="@string/app_name"
+        android:taskAffinity=""
+        android:theme="@android:style/Theme.Material.Settings"
+        android:uiOptions="splitActionBarWhenNarrow"
+        android:supportsRtl="true">
+
+        <receiver android:name = ".RcsNotify">
+            <intent-filter>
+                <action android:name = "org.gsma.joyn.action.VIEW_SETTINGS"/>
+            </intent-filter>
+        </receiver>
+        
+        <receiver android:name = ".RcsNotify">
+            <intent-filter>
+                <action android:name = "com.orangelabs.rcs.SHOW_403_NOTIFICATION"/>
+            </intent-filter>
+        </receiver>
+        
+        <activity android:name=".RcsPsAlertDialog"
+            android:theme="@*android:style/Theme.Material.Light.Dialog.Alert"
+            android:configChanges="orientation|keyboardHidden|screenSize|mcc|mnc"
+            android:exported="true">
+        </activity>
+    </application>
+
+</manifest>

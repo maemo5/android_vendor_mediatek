@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:dividerPadding="12dip"
+	android:showDividers="middle"
+	android:orientation="horizontal" >
+
+    <Button
+        android:id="@+id/done"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        style="?android:attr/actionButtonStyle"
+        android:layout_marginRight="2dip"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:gravity="center_vertical"
+        android:text="@android:string/ok"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/background_primary"
+        android:paddingEnd="25dip"
+        android:singleLine="true"
+        android:textSize="12sp" />
+
+    <ImageView
+        android:id="@+id/ic_divider"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
+		android:src="@drawable/divider_vertical_holo_light"
+		android:tint="@color/actionbar_icon_color"
+        android:layout_marginBottom="10dip"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="2dip"
+        android:layout_marginTop="10dip"
+        android:layout_toLeftOf="@+id/done"
+        android:alpha="0.9"
+        android:gravity="center"
+        android:scaleType="fitXY" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_toStartOf="@+id/ic_divider"
+        android:gravity="right" >
+
+    <Button
+		android:id="@+id/select"
+		style="?android:attr/actionButtonStyle"
+		android:layout_width="wrap_content"
+		android:layout_height="match_parent"
+		android:layout_centerVertical="true"
+		android:layout_alignParentRight="true"
+		android:divider="?android:attr/listDividerAlertDialog"
+        android:ellipsize="end"
+		android:singleLine="true"
+		android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/background_primary"
+        android:textAlignment="center" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+		android:layout_gravity="end"
+		android:layout_alignParentRight="true"
+		android:src="@drawable/dropdown_ic_arrow_normal_holo_light"
+		android:tint="@color/actionbar_icon_color"
+        android:alpha="0.5" />
+	</RelativeLayout>
+
+</RelativeLayout>

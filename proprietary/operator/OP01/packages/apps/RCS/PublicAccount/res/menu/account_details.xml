@@ -1,0 +1,11 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.mediatek.pam.client.android.activities.AccountDetailsActivity" >
+
+    <item
+        android:id="@+id/account_details_refresh"
+        android:orderInCategory="100"
+        android:showAsAction="always"
+        android:title="@string/account_details_refresh"/>
+
+</menu>
