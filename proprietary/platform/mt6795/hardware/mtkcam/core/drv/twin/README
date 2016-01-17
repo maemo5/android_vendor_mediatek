@@ -1,1 +1,0 @@
-version: dual_cam_20130708

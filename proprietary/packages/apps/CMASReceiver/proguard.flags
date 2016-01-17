@@ -1,8 +1,0 @@
--keep public class com.mediatek.cellbroadcastreceiver.Comparer {
-    public *;
-}
--keep public class com.mediatek.cellbroadcastreceiver.CMASAlertFullWindow {
-    public *;
-}
-
-

@@ -1,4 +1,0 @@
-[
-	{ operationName : "Replace", nodeUri : "./ANDSF/UE_Profile/1/OSId", objectValue : "Test OS Id", objectType : "chr", newNode : "" },
-	{ operationName : "Replace", nodeUri : "./ANDSF/UE_Profile/DevCapability", objectValue : "1", objectType : "chr", newNode : "" },
-]

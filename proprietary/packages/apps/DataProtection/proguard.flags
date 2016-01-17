@@ -1,2 +1,0 @@
-#for plugin to keep the class
--keep class com.mediatek.dataprotection.plugin.** { *; }

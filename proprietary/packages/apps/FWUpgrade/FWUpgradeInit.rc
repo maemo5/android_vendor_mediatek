@@ -1,4 +1,0 @@
-
-service fotabinder /system/bin/fotabinder
-    class main
-

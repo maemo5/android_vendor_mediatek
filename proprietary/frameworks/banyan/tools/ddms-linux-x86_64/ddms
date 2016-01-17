@@ -1,2 +1,0 @@
-#!/bin/bash
-exec java -Dcom.android.ddms.bindir=$PWD -jar ddms.jar

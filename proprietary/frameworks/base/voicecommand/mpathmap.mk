@@ -1,1 +1,0 @@
-MTK_FRAMEWORK := voicecommand
