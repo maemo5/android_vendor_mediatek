@@ -1,4 +1,4 @@
-# Proprietary blob for Mediatek devices (MT6795) used to add Engineer mode for Redmi Note 2 (HERMES)
+# Proprietary blob for Mediatek devices (MT6795) used to add Engineer Mode and FM Transmitter for Redmi Note 2 (HERMES)
 
 ### Other resource:
   - Device tree: https://github.com/jianminglok/android_device_xiaomi_hermes
