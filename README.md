@@ -6,4 +6,5 @@
   - Vendor blobs: https://github.com/jianminglok/android_vendor_xiaomi_hermes
 
 ### Credits (Sort by alphabetical order):
+  - jianminglok
   - Mediatek
